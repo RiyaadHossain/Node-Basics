@@ -24,9 +24,14 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/user/:id', (req, res) => {
-    console.log(req.params);
     const id = req.params.id;
     const user = users[id]
+    res.send(user)
+})
+
+app.get('/special/:id', (req, res) => {
+    const id = req.params.id
+    const user = users.find(man => man.id == id)
     res.send(user)
 })
 
