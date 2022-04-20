@@ -7,6 +7,10 @@ app.get("/", (req, res) => {
     Allah Created the whole Universe.`);
 });
 
+app.get('/home', (req, res) => {
+    res.send("This is Home 🏡 ")
+})
+
 app.listen(port, () => {
   console.log(`Hey, Whose world is this? .......  Ans: ${port}`);
 });
