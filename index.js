@@ -23,6 +23,13 @@ app.get('/users', (req, res) => {
     res.send(users)
 })
 
+app.get('/user/:id', (req, res) => {
+    console.log(req.params);
+    const id = req.params.id;
+    const user = users[id]
+    res.send(user)
+})
+
 app.listen(port, () => {
   console.log(`Hey, Whose world is this? .......  Ans: ${port}`);
 });
