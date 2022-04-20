@@ -1,6 +1,8 @@
 const express = require("express");
+var cors = require('cors')
 const app = express();
 const port = 5000;
+
 
 const users = [
     {id:1, name: "Riyad"},
@@ -10,6 +12,7 @@ const users = [
     {id:5, name: "Ozil"}
 ]
 
+app.use(cors())
 app.get("/", (req, res) => {
   res.send(`Hello, This is Allah's World!
     Allah Created the whole Universe.`);
@@ -36,5 +39,5 @@ app.get('/special/:id', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Hey, Whose world is this? .......  Ans: ${port}`);
+  console.log(`Hey, Ans: ${port}`);
 });
