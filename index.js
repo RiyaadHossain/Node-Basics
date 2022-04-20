@@ -13,6 +13,8 @@ const users = [
 ]
 
 app.use(cors())
+app.use(express.json())
+
 app.get("/", (req, res) => {
   res.send(`Hello, This is Allah's World!
     Allah Created the whole Universe.`);
@@ -30,6 +32,11 @@ app.get('/user/:id', (req, res) => {
     const id = req.params.id;
     const user = users[id]
     res.send(user)
+})
+
+app.post('/user', (req, res) => {
+    console.log(req);
+    console.log('Successfully request accept');
 })
 
 app.get('/special/:id', (req, res) => {
